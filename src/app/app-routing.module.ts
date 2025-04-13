@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './pages/error/error.component';
 import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
 import { LayoutUserComponent } from './layout/layout-user/layout-user.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       },
       {
